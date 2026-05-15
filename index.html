@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KakkuOS - CachyOS-Based Hyprland OS</title>
+    <meta name="description" content="KakkuOS is a CachyOS-based Hyprland operating system with polished defaults, curated packages, themes, and practical tools.">
+    <meta name="keywords" content="KakkuOS, CachyOS, Hyprland, Wayland, Linux desktop, Arch Linux, operating system">
+    <meta name="author" content="KakkuOS">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#11111b">
+    <meta name="color-scheme" content="dark light">
+    <link rel="canonical" href="https://kakku.jeme.app/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="KakkuOS">
+    <meta property="og:title" content="KakkuOS - CachyOS-Based Hyprland OS">
+    <meta property="og:description" content="A modern CachyOS-based operating system with a polished Hyprland desktop, curated packages, themes, helper commands, and sensible defaults.">
+    <meta property="og:url" content="https://kakku.jeme.app/">
+    <meta property="og:image" content="https://kakku.jeme.app/assets/og-image.png">
+    <meta property="og:image:secure_url" content="https://kakku.jeme.app/assets/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="3840">
+    <meta property="og:image:height" content="2160">
+    <meta property="og:image:alt" content="KakkuOS desktop wallpaper and branding">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KakkuOS - CachyOS-Based Hyprland OS">
+    <meta name="twitter:description" content="A modern CachyOS-based operating system with a polished Hyprland desktop, curated packages, themes, helper commands, and sensible defaults.">
+    <meta name="twitter:image" content="https://kakku.jeme.app/assets/og-image.png">
+    <meta name="twitter:image:alt" content="KakkuOS desktop wallpaper and branding">
+
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/og-image.png">
+    <link rel="preload" href="assets/wordmark.svg" as="image" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="KakkuOS home">
+        <img src="assets/logo.svg" alt="" width="36" height="36">
+        <span>KakkuOS</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#stack">Stack</a>
+        <a href="#themes">Themes</a>
+        <a href="#install">Install</a>
+        <a href="#commands">Commands</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">CachyOS base. Kakku desktop.</p>
+          <h1>KakkuOS</h1>
+          <p class="lead">
+            A CachyOS-based operating system with a polished Hyprland desktop, curated packages, cohesive themes, and practical tools ready from the first boot.
+          </p>
+          <div class="hero-install code-block">
+            <button class="copy-button" type="button" data-copy aria-label="Copy install command">Copy</button>
+            <pre><code id="install-command">curl -fsSL https://kakku.jeme.app/install.sh | bash</code></pre>
+          </div>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="#install">Install KakkuOS</a>
+            <a class="button secondary" href="https://github.com/TheJeme/kakku" rel="noopener">GitHub repo</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="KakkuOS preview">
+          <div class="desktop-frame">
+            <div class="bar">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <strong>Kakku</strong>
+              <span>10:40</span>
+            </div>
+            <div class="window-grid">
+              <article class="terminal-window">
+                <div class="window-top"><span></span><span></span><span></span></div>
+                <pre><code>kakku info
+base: CachyOS
+session: Hyprland
+theme: matcha
+status: ready</code></pre>
+              </article>
+              <article class="status-panel">
+                <h2>Desktop defaults</h2>
+                <p>Waybar, Rofi, Kitty, Mako, Fastfetch, Hyprlock, Hypridle, and Hyprpaper configured as one clean system.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow">What it is</p>
+          <h2 id="intro-title">A complete OS experience built on CachyOS.</h2>
+        </div>
+        <p>
+          KakkuOS uses CachyOS as its performance-focused foundation and builds a distinct Hyprland system on top: curated software, desktop defaults, dotfiles, themes, branding, helper commands, and installer flow. The goal is a real daily-driver OS while still benefiting from CachyOS hardware support, repositories, kernel work, and low-level tuning.
+        </p>
+      </section>
+
+      <section class="section" id="stack" aria-labelledby="stack-title">
+        <div class="section-heading">
+          <p class="eyebrow">Stack</p>
+          <h2 id="stack-title">Built from proven Linux desktop parts.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-icon">Hy</span>
+            <h3>Hyprland session</h3>
+            <p>Wayland compositor defaults for wallpaper, idle handling, lock screen, portals, color picking, and display comfort.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">UI</span>
+            <h3>Useful desktop tools</h3>
+            <p>Waybar, Rofi, Kitty, Dolphin, Firefox, Mako, fonts, screenshots, brightness, audio, and notifications.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">PK</span>
+            <h3>Curated system</h3>
+            <p>Package sets for core services, desktop apps, CLI tools, development, gaming, media, repo extras, and AUR software.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">KT</span>
+            <h3>Kakku tooling</h3>
+            <p>A small command suite for diagnostics, paths, package information, version details, and theme management.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section themes" id="themes" aria-labelledby="themes-title">
+        <div class="section-heading">
+          <p class="eyebrow">Themes</p>
+          <h2 id="themes-title">Choose a desktop mood without rewiring configs.</h2>
+        </div>
+        <div class="theme-layout">
+          <div class="theme-preview" data-theme-preview>
+            <div class="preview-wall"></div>
+            <div class="preview-card">
+              <span data-theme-name>Matcha</span>
+              <small data-theme-desc>Green accents with a calm dark shell.</small>
+            </div>
+          </div>
+          <div class="theme-list" aria-label="Kakku themes">
+            <button class="theme-button active" type="button" data-theme="matcha">Matcha</button>
+            <button class="theme-button" type="button" data-theme="blueberry">Blueberry</button>
+            <button class="theme-button" type="button" data-theme="strawberry">Strawberry</button>
+            <button class="theme-button" type="button" data-theme="funfetti">Funfetti</button>
+            <button class="theme-button" type="button" data-theme="velvet">Velvet</button>
+            <button class="theme-button" type="button" data-theme="caramel">Caramel</button>
+            <button class="theme-button" type="button" data-theme="honey">Honey</button>
+            <button class="theme-button" type="button" data-theme="mocha">Mocha</button>
+            <button class="theme-button" type="button" data-theme="tiramisu">Tiramisu</button>
+            <button class="theme-button" type="button" data-theme="vanilla">Vanilla</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section install" id="install" aria-labelledby="install-title">
+        <div class="install-copy">
+          <p class="eyebrow">Install</p>
+          <h2 id="install-title">Install KakkuOS on a CachyOS base.</h2>
+          <p>
+            Start with CachyOS Hyprland and run the hosted installer. It clones the Kakku repository, runs the project installer, installs packages with <code>--needed</code>, copies dotfiles, backs up changed local configs, and enables common services when available.
+          </p>
+        </div>
+        <div class="code-block">
+          <pre><code>curl -fsSL https://kakku.jeme.app/install.sh | bash</code></pre>
+        </div>
+      </section>
+
+      <section class="section commands" id="commands" aria-labelledby="commands-title">
+        <div class="section-heading">
+          <p class="eyebrow">Commands</p>
+          <h2 id="commands-title">Small helpers for everyday maintenance.</h2>
+        </div>
+        <div class="command-list">
+          <article><code>kakku info</code><span>Show base OS, kernel, Hyprland, and theme information.</span></article>
+          <article><code>kakku doctor</code><span>Check expected commands, configs, theme paths, wallpaper, and services.</span></article>
+          <article><code>kakku packages</code><span>Review installed package set information.</span></article>
+          <article><code>kakku theme set &lt;theme&gt;</code><span>Apply a Kakku theme across the configured desktop.</span></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img src="assets/wordmark.svg" alt="KakkuOS wordmark" width="245" height="60">
+      <p>CachyOS performance underneath. Kakku defaults on top.</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
