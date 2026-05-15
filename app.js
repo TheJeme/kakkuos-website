@@ -1,6 +1,5 @@
 const header = document.querySelector("[data-header]");
-const copyButton = document.querySelector("[data-copy]");
-const installCommand = document.querySelector("#install-command");
+const copyButtons = document.querySelectorAll("[data-copy]");
 const themePreview = document.querySelector("[data-theme-preview]");
 const themeName = document.querySelector("[data-theme-name]");
 const themeDesc = document.querySelector("[data-theme-desc]");
@@ -43,11 +42,11 @@ const themes = {
     a: "#e0af68",
     b: "#9ece6a"
   },
-  honey: {
-    name: "Honey",
-    desc: "Golden highlights with a smooth, readable desktop base.",
-    a: "#f6c85f",
-    b: "#f4a261"
+  carrot: {
+    name: "Carrot",
+    desc: "Fresh orange highlights with a smooth, readable desktop base.",
+    a: "#ff9e64",
+    b: "#e0af68"
   },
   mocha: {
     name: "Mocha",
@@ -87,23 +86,26 @@ function setTheme(themeKey) {
   });
 }
 
-async function copyInstallCommand() {
-  const text = installCommand?.textContent?.trim();
-  if (!text || !copyButton) return;
+async function copyInstallCommand(button) {
+  const code = button.closest(".code-block")?.querySelector("code");
+  const text = code?.textContent?.trim();
+  if (!text) return;
 
   try {
     await navigator.clipboard.writeText(text);
-    copyButton.textContent = "Copied";
+    button.textContent = "Copied";
     window.setTimeout(() => {
-      copyButton.textContent = "Copy";
+      button.textContent = "Copy";
     }, 1400);
   } catch {
-    copyButton.textContent = "Select";
+    button.textContent = "Select";
   }
 }
 
 window.addEventListener("scroll", setHeaderState, { passive: true });
-copyButton?.addEventListener("click", copyInstallCommand);
+copyButtons.forEach((button) => {
+  button.addEventListener("click", () => copyInstallCommand(button));
+});
 themeButtons.forEach((button) => {
   button.addEventListener("click", () => setTheme(button.dataset.theme));
 });

@@ -22,6 +22,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   background:
     radial-gradient(circle at 18% 12%, rgba(158, 206, 106, 0.14), transparent 28rem),
@@ -102,12 +103,14 @@ code {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(580px, 0.95fr) minmax(420px, 1fr);
+  display: flex;
   align-items: center;
-  gap: clamp(32px, 5vw, 68px);
   min-height: calc(100svh - 72px);
   padding: 60px 0 46px;
+}
+
+.hero-copy {
+  width: min(100%, 1040px);
 }
 
 .eyebrow {
@@ -147,7 +150,7 @@ h3 {
 }
 
 .lead {
-  max-width: 680px;
+  max-width: 820px;
   color: #d8deea;
   font-size: clamp(1.1rem, 2vw, 1.35rem);
 }
@@ -180,98 +183,12 @@ h3 {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.hero-visual {
-  min-width: 0;
-}
-
-.desktop-frame {
-  position: relative;
-  overflow: hidden;
-  min-height: 520px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(158, 206, 106, 0.18), transparent 34%),
-    linear-gradient(225deg, rgba(247, 118, 142, 0.16), transparent 36%),
-    linear-gradient(160deg, #11131a, #1a1f29 54%, #101219);
-  box-shadow: var(--shadow);
-}
-
-.bar {
-  display: grid;
-  grid-template-columns: repeat(3, 34px) 1fr auto;
-  align-items: center;
-  gap: 8px;
-  height: 44px;
-  padding: 0 14px;
-  border-bottom: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.82rem;
-}
-
-.bar span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 24px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.bar strong {
-  justify-self: center;
-  color: var(--text);
-}
-
-.window-grid {
-  display: grid;
-  grid-template-columns: 1fr 0.78fr;
-  gap: 18px;
-  padding: 24px;
-}
-
-.terminal-window,
 .status-panel,
 .feature-card,
 .command-list article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(14, 16, 20, 0.78);
-}
-
-.terminal-window {
-  min-height: 330px;
-  overflow: hidden;
-}
-
-.window-top {
-  display: flex;
-  gap: 7px;
-  padding: 14px;
-  border-bottom: 1px solid var(--line);
-}
-
-.window-top span {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--rose);
-}
-
-.window-top span:nth-child(2) {
-  background: var(--amber);
-}
-
-.window-top span:nth-child(3) {
-  background: var(--green);
-}
-
-.terminal-window pre {
-  margin: 0;
-  padding: 26px;
-  color: #d7f5b7;
-  font-size: clamp(0.82rem, 1.5vw, 1rem);
-  white-space: pre-wrap;
 }
 
 .status-panel {
@@ -338,6 +255,15 @@ h3 {
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.72fr);
   gap: 22px;
   align-items: start;
+}
+
+.install {
+  grid-template-columns: minmax(0, 1fr) 600px;
+}
+
+.theme-layout > *,
+.install > * {
+  min-width: 0;
 }
 
 .theme-preview {
@@ -408,6 +334,9 @@ h3 {
 
 .code-block {
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -425,26 +354,35 @@ h3 {
 
 .code-block pre {
   margin: 0;
-  padding: 58px 22px 22px;
-  overflow-x: auto;
-  color: #d7f5b7;
-}
-
-.hero-install {
-  width: min(100%, 660px);
-  margin-top: 28px;
-}
-
-.hero-install pre {
+  max-width: 100%;
+  padding: 58px 96px 22px 22px;
   overflow: hidden;
-  padding: 52px 88px 18px 18px;
+  color: #d7f5b7;
   white-space: pre;
 }
 
-.hero-install code {
+.code-block code {
   display: block;
-  font-size: 0.8rem;
+  max-width: 100%;
+  overflow: hidden;
+  font-size: clamp(0.68rem, 1.18vw, 0.92rem);
   line-height: 1.4;
+  text-overflow: clip;
+}
+
+.install-command {
+  width: min(100%, 600px);
+  margin-top: 28px;
+}
+
+.install-command pre {
+  overflow: hidden;
+  padding: 52px 96px 18px 20px;
+  white-space: pre;
+}
+
+.install-command code {
+  font-size: clamp(0.74rem, 1.05vw, 0.84rem);
 }
 
 .command-list {
@@ -489,7 +427,6 @@ h3 {
 }
 
 @media (max-width: 1120px) {
-  .hero,
   .intro,
   .theme-layout,
   .install {
@@ -500,13 +437,16 @@ h3 {
     min-height: auto;
   }
 
-  .hero-install {
+  .install-command {
     width: 100%;
   }
 
-  .hero-install pre {
-    overflow-x: auto;
-    white-space: pre;
+  .code-block pre {
+    padding-right: 88px;
+  }
+
+  .code-block code {
+    font-size: clamp(0.64rem, 2.4vw, 0.82rem);
   }
 
   .feature-grid {
@@ -535,21 +475,15 @@ h3 {
     width: min(100% - 28px, 1280px);
   }
 
-  .desktop-frame,
   .theme-preview {
     min-height: 360px;
   }
 
-  .window-grid,
   .feature-grid,
   .theme-list,
   .command-list article,
   .site-footer {
     grid-template-columns: 1fr;
-  }
-
-  .window-grid {
-    padding: 14px;
   }
 
   .status-panel {
@@ -562,5 +496,19 @@ h3 {
 
   .install {
     padding: 32px 18px;
+  }
+
+  .code-block pre {
+    padding: 56px 76px 18px 14px;
+    white-space: pre-wrap;
+  }
+
+  .code-block code {
+    overflow-wrap: anywhere;
+  }
+
+  .copy-button {
+    right: 10px;
+    padding: 0 10px;
   }
 }

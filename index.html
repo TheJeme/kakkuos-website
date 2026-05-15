@@ -10,15 +10,15 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#11111b">
     <meta name="color-scheme" content="dark light">
-    <link rel="canonical" href="https://kakku.jeme.app/">
+    <link rel="canonical" href="https://kakkuos.jeme.app/">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="KakkuOS">
     <meta property="og:title" content="KakkuOS - CachyOS-Based Hyprland OS">
     <meta property="og:description" content="A modern CachyOS-based operating system with a polished Hyprland desktop, curated packages, themes, helper commands, and sensible defaults.">
-    <meta property="og:url" content="https://kakku.jeme.app/">
-    <meta property="og:image" content="https://kakku.jeme.app/assets/og-image.png">
-    <meta property="og:image:secure_url" content="https://kakku.jeme.app/assets/og-image.png">
+    <meta property="og:url" content="https://kakkuos.jeme.app/">
+    <meta property="og:image" content="https://kakkuos.jeme.app/assets/og-image.png">
+    <meta property="og:image:secure_url" content="https://kakkuos.jeme.app/assets/og-image.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="3840">
     <meta property="og:image:height" content="2160">
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="KakkuOS - CachyOS-Based Hyprland OS">
     <meta name="twitter:description" content="A modern CachyOS-based operating system with a polished Hyprland desktop, curated packages, themes, helper commands, and sensible defaults.">
-    <meta name="twitter:image" content="https://kakku.jeme.app/assets/og-image.png">
+    <meta name="twitter:image" content="https://kakkuos.jeme.app/assets/og-image.png">
     <meta name="twitter:image:alt" content="KakkuOS desktop wallpaper and branding">
 
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
@@ -58,38 +58,13 @@
           <p class="lead">
             A CachyOS-based operating system with a polished Hyprland desktop, curated packages, cohesive themes, and practical tools ready from the first boot.
           </p>
-          <div class="hero-install code-block">
+          <div class="install-command code-block">
             <button class="copy-button" type="button" data-copy aria-label="Copy install command">Copy</button>
-            <pre><code id="install-command">curl -fsSL https://kakku.jeme.app/install.sh | bash</code></pre>
+            <pre><code>curl -fsSL https://kakkuos.jeme.app/install.sh | bash</code></pre>
           </div>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button primary" href="#install">Install KakkuOS</a>
             <a class="button secondary" href="https://github.com/TheJeme/kakku" rel="noopener">GitHub repo</a>
-          </div>
-        </div>
-        <div class="hero-visual" aria-label="KakkuOS preview">
-          <div class="desktop-frame">
-            <div class="bar">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-              <strong>Kakku</strong>
-              <span>10:40</span>
-            </div>
-            <div class="window-grid">
-              <article class="terminal-window">
-                <div class="window-top"><span></span><span></span><span></span></div>
-                <pre><code>kakku info
-base: CachyOS
-session: Hyprland
-theme: matcha
-status: ready</code></pre>
-              </article>
-              <article class="status-panel">
-                <h2>Desktop defaults</h2>
-                <p>Waybar, Rofi, Kitty, Mako, Fastfetch, Hyprlock, Hypridle, and Hyprpaper configured as one clean system.</p>
-              </article>
-            </div>
           </div>
         </div>
       </section>
@@ -153,7 +128,7 @@ status: ready</code></pre>
             <button class="theme-button" type="button" data-theme="funfetti">Funfetti</button>
             <button class="theme-button" type="button" data-theme="velvet">Velvet</button>
             <button class="theme-button" type="button" data-theme="caramel">Caramel</button>
-            <button class="theme-button" type="button" data-theme="honey">Honey</button>
+            <button class="theme-button" type="button" data-theme="carrot">Carrot</button>
             <button class="theme-button" type="button" data-theme="mocha">Mocha</button>
             <button class="theme-button" type="button" data-theme="tiramisu">Tiramisu</button>
             <button class="theme-button" type="button" data-theme="vanilla">Vanilla</button>
@@ -169,8 +144,9 @@ status: ready</code></pre>
             Start with CachyOS Hyprland and run the hosted installer. It clones the Kakku repository, runs the project installer, installs packages with <code>--needed</code>, copies dotfiles, backs up changed local configs, and enables common services when available.
           </p>
         </div>
-        <div class="code-block">
-          <pre><code>curl -fsSL https://kakku.jeme.app/install.sh | bash</code></pre>
+        <div class="install-command code-block">
+          <button class="copy-button" type="button" data-copy aria-label="Copy install command">Copy</button>
+          <pre><code>curl -fsSL https://kakkuos.jeme.app/install.sh | bash</code></pre>
         </div>
       </section>
 
