@@ -44,7 +44,6 @@
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#stack">Stack</a>
-        <a href="#install">Install</a>
         <a href="#commands">Commands</a>
       </nav>
     </header>
@@ -62,8 +61,8 @@
             <pre><code>curl -fsSL https://kakkuos.jeme.app/install.sh | sh</code></pre>
           </div>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#install">Install KakkuOS</a>
-            <a class="button secondary" href="https://github.com/TheJeme/kakku" rel="noopener">GitHub repo</a>
+            <a class="button primary" href="https://github.com/TheJeme/kakku" rel="noopener">GitHub repo</a>
+            <a class="button secondary" href="#stack">Explore stack</a>
           </div>
         </div>
       </section>
@@ -127,19 +126,7 @@
         </div>
       </section>
 
-      <section class="section install" id="install" aria-labelledby="install-title">
-        <div class="install-copy">
-          <p class="eyebrow">Install</p>
-          <h2 id="install-title">Install KakkuOS.</h2>
-          <p>
-            Start with CachyOS, choose niri if the installer offers it, then run the hosted installer. It clones the Kakku repository, runs the project installer, installs packages with <code>--needed</code>, copies dotfiles, backs up changed local configs, configures greetd for <code>niri-session</code>, and enables common services when available.
-          </p>
-        </div>
-        <div class="install-command code-block">
-          <button class="copy-button" type="button" data-copy aria-label="Copy install command">Copy</button>
-          <pre><code>curl -fsSL https://kakkuos.jeme.app/install.sh | sh</code></pre>
-        </div>
-      </section>
+
 
       <section class="section commands" id="commands" aria-labelledby="commands-title">
         <div class="section-heading">
