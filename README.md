@@ -6,7 +6,7 @@ Static landing page for KakkuOS, a layered Linux operating system.
 
 - `index.html` - page structure, SEO metadata, Open Graph tags, and content.
 - `styles.css` - responsive layout and visual styling.
-- `app.js` - copy buttons, sticky header state, and desktop default preview controls.
+- `app.js` - copy buttons and sticky header state.
 - `install.sh` - hosted installer wrapper used by the website one-liner.
 - `assets/` - logo, wordmark, and Open Graph image assets.
 
