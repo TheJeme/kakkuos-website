@@ -1,12 +1,12 @@
 # KakkuOS Website
 
-Static landing page for KakkuOS, a CachyOS-based Hyprland operating system.
+Static landing page for KakkuOS, a layered Linux operating system.
 
 ## Files
 
 - `index.html` - page structure, SEO metadata, Open Graph tags, and content.
 - `styles.css` - responsive layout and visual styling.
-- `app.js` - copy buttons, sticky header state, and theme preview controls.
+- `app.js` - copy buttons, sticky header state, and desktop default preview controls.
 - `install.sh` - hosted installer wrapper used by the website one-liner.
 - `assets/` - logo, wordmark, and Open Graph image assets.
 
@@ -14,11 +14,11 @@ Static landing page for KakkuOS, a CachyOS-based Hyprland operating system.
 
 The website presents this command:
 
-```bash
-curl -fsSL https://kakkuos.jeme.app/install.sh | bash
+```sh
+curl -fsSL https://kakkuos.jeme.app/install.sh | sh
 ```
 
-`install.sh` clones or updates `https://github.com/TheJeme/kakku.git` in `~/kakku`, then runs the KakkuOS installer from that checkout.
+`install.sh` is POSIX `sh` compatible. It clones or updates `https://github.com/TheJeme/kakku.git` in `~/kakku`, then runs the KakkuOS installer from that checkout through the installer's own shebang.
 
 ## Development
 

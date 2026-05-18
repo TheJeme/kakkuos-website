@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/sh
+set -eu
 
 REPO_URL="https://github.com/TheJeme/kakku.git"
 INSTALL_DIR="${KAKKU_DIR:-$HOME/kakku}"
@@ -12,7 +12,6 @@ require_command() {
 }
 
 require_command git
-require_command bash
 
 if [ -d "$INSTALL_DIR/.git" ]; then
   echo "Updating existing Kakku checkout at $INSTALL_DIR"
@@ -28,4 +27,4 @@ fi
 
 chmod +x "$INSTALL_DIR/install.sh"
 cd "$INSTALL_DIR"
-exec bash ./install.sh
+exec ./install.sh "$@"

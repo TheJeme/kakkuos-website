@@ -1,70 +1,58 @@
 const header = document.querySelector("[data-header]");
 const copyButtons = document.querySelectorAll("[data-copy]");
-const themePreview = document.querySelector("[data-theme-preview]");
-const themeName = document.querySelector("[data-theme-name]");
-const themeDesc = document.querySelector("[data-theme-desc]");
-const themeButtons = document.querySelectorAll("[data-theme]");
+const highlightPreview = document.querySelector("[data-highlight-preview]");
+const highlightName = document.querySelector("[data-highlight-name]");
+const highlightDesc = document.querySelector("[data-highlight-desc]");
+const highlightButtons = document.querySelectorAll("[data-highlight]");
 
-const themes = {
-  matcha: {
-    name: "Matcha",
-    desc: "Green accents with a calm dark shell.",
+const highlights = {
+  desktop: {
+    name: "niri + DMS",
+    desc: "Scrollable tiling with a complete shell layer for launchers, status, notifications, lock, and settings.",
     a: "#9ece6a",
     b: "#7aa2f7"
   },
-  blueberry: {
-    name: "Blueberry",
-    desc: "Cool blue highlights for a crisp Wayland workspace.",
+  terminal: {
+    name: "Ghostty",
+    desc: "A GPU-accelerated terminal paired with Kakku shell defaults and developer-friendly fonts.",
     a: "#7aa2f7",
     b: "#bb9af7"
   },
-  strawberry: {
-    name: "Strawberry",
-    desc: "Bright rose accents with a soft terminal-ready base.",
+  shell: {
+    name: "fish + Starship",
+    desc: "fish is the default login shell, with zsh and bash defaults still available.",
     a: "#f7768e",
     b: "#e0af68"
   },
-  funfetti: {
-    name: "Funfetti",
-    desc: "Playful color pops across launchers, bars, and prompts.",
+  browser: {
+    name: "Zen Browser",
+    desc: "Zen handles web links by default, with Firefox kept as a fallback and browser policies applied.",
     a: "#ff9e64",
     b: "#73daca"
   },
-  velvet: {
-    name: "Velvet",
-    desc: "Deep violet tones for a richer desktop setup.",
+  files: {
+    name: "Dolphin + yazi",
+    desc: "Graphical and terminal file managers are both part of the default desktop workflow.",
     a: "#bb9af7",
     b: "#f7768e"
   },
-  caramel: {
-    name: "Caramel",
-    desc: "Warm amber details balanced by a dark interface.",
+  plugins: {
+    name: "DMS plugins",
+    desc: "The installer sets up the AI Assistant and Calculator plugins under DankMaterialShell.",
     a: "#e0af68",
     b: "#9ece6a"
   },
-  carrot: {
-    name: "Carrot",
-    desc: "Fresh orange highlights with a smooth, readable desktop base.",
+  colors: {
+    name: "matugen colors",
+    desc: "Wallpaper-based Material colors keep the shell, prompts, and branding visually aligned.",
     a: "#ff9e64",
     b: "#e0af68"
   },
-  mocha: {
-    name: "Mocha",
-    desc: "Low-contrast comfort with clean Wayland essentials.",
+  services: {
+    name: "Core services",
+    desc: "NetworkManager, Bluetooth, Docker, Tailscale, and power profiles are enabled when available.",
     a: "#c0caf5",
     b: "#a9b1d6"
-  },
-  tiramisu: {
-    name: "Tiramisu",
-    desc: "Soft dessert tones for a quieter desktop setup.",
-    a: "#f4c2c2",
-    b: "#c3e88d"
-  },
-  vanilla: {
-    name: "Vanilla",
-    desc: "Simple neutral defaults with light, readable accents.",
-    a: "#f4f7fb",
-    b: "#9ece6a"
   }
 };
 
@@ -72,17 +60,17 @@ function setHeaderState() {
   header?.classList.toggle("scrolled", window.scrollY > 10);
 }
 
-function setTheme(themeKey) {
-  const theme = themes[themeKey] || themes.matcha;
+function setHighlight(highlightKey) {
+  const highlight = highlights[highlightKey] || highlights.desktop;
 
-  themePreview?.style.setProperty("--theme-a", theme.a);
-  themePreview?.style.setProperty("--theme-b", theme.b);
+  highlightPreview?.style.setProperty("--theme-a", highlight.a);
+  highlightPreview?.style.setProperty("--theme-b", highlight.b);
 
-  if (themeName) themeName.textContent = theme.name;
-  if (themeDesc) themeDesc.textContent = theme.desc;
+  if (highlightName) highlightName.textContent = highlight.name;
+  if (highlightDesc) highlightDesc.textContent = highlight.desc;
 
-  themeButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.theme === themeKey);
+  highlightButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.highlight === highlightKey);
   });
 }
 
@@ -106,9 +94,9 @@ window.addEventListener("scroll", setHeaderState, { passive: true });
 copyButtons.forEach((button) => {
   button.addEventListener("click", () => copyInstallCommand(button));
 });
-themeButtons.forEach((button) => {
-  button.addEventListener("click", () => setTheme(button.dataset.theme));
+highlightButtons.forEach((button) => {
+  button.addEventListener("click", () => setHighlight(button.dataset.highlight));
 });
 
 setHeaderState();
-setTheme("matcha");
+setHighlight("desktop");
