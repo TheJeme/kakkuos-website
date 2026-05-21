@@ -1,13 +1,13 @@
 # KakkuOS Website
 
-Static landing page for KakkuOS, a layered Linux operating system.
+Static website for KakkuOS, a layered CachyOS desktop.
 
 ## Files
 
-- `index.html` - page structure, SEO metadata, Open Graph tags, and content.
-- `styles.css` - responsive layout and visual styling.
-- `app.js` - copy buttons and sticky header state.
-- `install.sh` - hosted installer wrapper used by the website one-liner.
+- `index.html` - page structure, SEO metadata, Open Graph tags, and current KakkuOS content.
+- `styles.css` - responsive layout, desktop preview, and visual styling.
+- `app.js` - copy button behavior and sticky header state.
+- `install` - hosted installer wrapper used by the website one-liner.
 - `assets/` - logo, wordmark, and Open Graph image assets.
 
 ## Install Command
@@ -15,10 +15,12 @@ Static landing page for KakkuOS, a layered Linux operating system.
 The website presents this command:
 
 ```sh
-curl -fsSL https://kakkuos.jeme.app/install.sh | sh
+curl -fsSL https://kakkuos.jeme.app/install | sh
 ```
 
-`install.sh` is POSIX `sh` compatible. It clones or updates `https://github.com/TheJeme/kakku.git` in `~/kakku`, then runs the KakkuOS installer from that checkout through the installer's own shebang.
+`install` is POSIX `sh` compatible. It clones or updates `https://github.com/TheJeme/kakkuos.git` in `~/kakkuos`, then runs the KakkuOS installer from that checkout through the installer's own shebang.
+
+KakkuOS is designed to be run on top of a fresh CachyOS install. The installer must be run as the target desktop user, not through `sudo`; the repository installer asks for sudo only for system changes.
 
 ## Development
 
@@ -31,7 +33,7 @@ Open `index.html` directly in a browser, or serve the folder with any static fil
 Deploy the repository as static files so these paths are public:
 
 - `/`
-- `/install.sh`
+- `/install`
 - `/assets/logo.svg`
 - `/assets/wordmark.svg`
 - `/assets/og-image.png`

@@ -10,14 +10,19 @@ async function copyInstallCommand(button) {
   const text = code?.textContent?.trim();
   if (!text) return;
 
+  const originalLabel = button.textContent;
+
   try {
     await navigator.clipboard.writeText(text);
     button.textContent = "Copied";
+    button.setAttribute("aria-label", "Install command copied");
     window.setTimeout(() => {
-      button.textContent = "Copy";
+      button.textContent = originalLabel || "Copy";
+      button.setAttribute("aria-label", "Copy install command");
     }, 1400);
   } catch {
     button.textContent = "Select";
+    button.setAttribute("aria-label", "Select the install command to copy it");
   }
 }
 

@@ -1,8 +1,8 @@
 #!/bin/sh
 set -eu
 
-REPO_URL="https://github.com/TheJeme/kakku.git"
-INSTALL_DIR="${KAKKU_DIR:-$HOME/kakku}"
+REPO_URL="https://github.com/TheJeme/kakkuos.git"
+INSTALL_DIR="${KAKKU_DIR:-$HOME/kakkuos}"
 
 require_command() {
   if ! command -v "$1" >/dev/null 2>&1; then
@@ -14,7 +14,7 @@ require_command() {
 require_command git
 
 if [ -d "$INSTALL_DIR/.git" ]; then
-  echo "Updating existing Kakku checkout at $INSTALL_DIR"
+  echo "Updating existing KakkuOS checkout at $INSTALL_DIR"
   git -C "$INSTALL_DIR" pull --ff-only
 elif [ -e "$INSTALL_DIR" ]; then
   echo "$INSTALL_DIR already exists and is not a Git checkout." >&2

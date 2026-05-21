@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KakkuOS - Layered Linux OS</title>
-    <meta name="description" content="KakkuOS is a layered Linux operating system with a polished desktop, curated packages, cohesive defaults, and practical tools.">
+    <title>KakkuOS - Layered CachyOS Desktop</title>
+    <meta name="description" content="KakkuOS layers a complete niri and DankMaterialShell desktop, curated packages, branded defaults, helper commands, and practical system settings on top of CachyOS.">
     <meta name="keywords" content="KakkuOS, CachyOS, niri, DankMaterialShell, DMS, Wayland, Linux desktop, Arch Linux, operating system">
     <meta name="author" content="KakkuOS">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#11111b">
+    <meta name="theme-color" content="#0f1317">
     <meta name="color-scheme" content="dark light">
     <link rel="canonical" href="https://kakkuos.jeme.app/">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="KakkuOS">
-    <meta property="og:title" content="KakkuOS - Layered Linux OS">
-    <meta property="og:description" content="A layered Linux operating system with a polished desktop, curated packages, cohesive defaults, and practical tools.">
+    <meta property="og:title" content="KakkuOS - Layered CachyOS Desktop">
+    <meta property="og:description" content="A complete Kakku-owned desktop layer for CachyOS: niri, DankMaterialShell, curated packages, branding, defaults, and helper commands.">
     <meta property="og:url" content="https://kakkuos.jeme.app/">
     <meta property="og:image" content="https://kakkuos.jeme.app/assets/og-image.png">
     <meta property="og:image:secure_url" content="https://kakkuos.jeme.app/assets/og-image.png">
@@ -26,14 +26,15 @@
     <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="KakkuOS - Layered Linux OS">
-    <meta name="twitter:description" content="A layered Linux operating system with a polished desktop, curated packages, cohesive defaults, and practical tools.">
+    <meta name="twitter:title" content="KakkuOS - Layered CachyOS Desktop">
+    <meta name="twitter:description" content="A complete Kakku-owned desktop layer for CachyOS: niri, DankMaterialShell, curated packages, branding, defaults, and helper commands.">
     <meta name="twitter:image" content="https://kakkuos.jeme.app/assets/og-image.png">
     <meta name="twitter:image:alt" content="KakkuOS desktop wallpaper and branding">
 
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/og-image.png">
     <link rel="preload" href="assets/wordmark.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="assets/og-image.png" as="image" type="image/png">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -43,27 +44,22 @@
         <span>KakkuOS</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
+        <a href="#install">Install</a>
         <a href="#stack">Stack</a>
         <a href="#commands">Commands</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Layered desktop. Practical defaults.</p>
-          <h1>KakkuOS</h1>
+          <h1 id="hero-title">KakkuOS</h1>
           <p class="lead">
-            A layered Linux operating system with a polished desktop, curated packages, cohesive defaults, and practical tools ready from the first boot.
+            A layered Linux desktop that keeps CachyOS as the fast hardware foundation, then adds a complete Kakku-owned niri and DankMaterialShell experience.
           </p>
-          <div class="install-command code-block">
-            <span class="code-block-title">Install</span>
-            <button class="copy-button" type="button" data-copy aria-label="Copy install command">Copy</button>
-            <pre><code>curl -fsSL https://kakkuos.jeme.app/install.sh | sh</code></pre>
-          </div>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="https://github.com/TheJeme/kakku" rel="noopener">GitHub repo</a>
-            <a class="button secondary" href="#stack">Explore stack</a>
+            <a class="button primary" href="#install">Install KakkuOS</a>
+            <a class="button secondary" href="https://github.com/TheJeme/kakkuos" rel="noopener">GitHub repo</a>
           </div>
         </div>
       </section>
@@ -71,83 +67,100 @@
       <section class="section intro" aria-labelledby="intro-title">
         <div>
           <p class="eyebrow">What it is</p>
-          <h2 id="intro-title">A complete OS experience with its own flavor.</h2>
+          <h2 id="intro-title">A complete OS personality on a proven base.</h2>
         </div>
         <p>
-          KakkuOS uses CachyOS as its performance-focused foundation and builds a distinct niri and DankMaterialShell system on top: curated software, desktop defaults, dotfiles, branding, helper commands, and installer flow. The goal is a real daily-driver OS while still benefiting from CachyOS hardware support, repositories, kernel work, and low-level tuning.
+          KakkuOS is installed on top of CachyOS. The lower system layer stays practical: kernel work, repositories, hardware support, gaming packages, and performance tuning. KakkuOS owns the desktop layer: login flow, niri config, DMS settings, shell defaults, apps, backgrounds, browser policies, service defaults, and a small maintenance command suite.
         </p>
+      </section>
+
+      <section class="section install" id="install" aria-labelledby="install-title">
+        <div class="install-copy">
+          <p class="eyebrow">Install</p>
+          <h2 id="install-title">Start from a fresh CachyOS system.</h2>
+          <p>
+            Install CachyOS first, then run the KakkuOS installer as the target desktop user. The website wrapper clones or updates the repo in <code>~/kakkuos</code> and runs the repository installer from there.
+          </p>
+        </div>
+        <div class="install-command code-block">
+          <span class="code-block-title">Run on CachyOS</span>
+          <button class="copy-button" type="button" data-copy aria-label="Copy install command">Copy</button>
+          <pre><code>curl -fsSL https://kakkuos.jeme.app/install | sh</code></pre>
+        </div>
       </section>
 
       <section class="section" id="stack" aria-labelledby="stack-title">
         <div class="section-heading">
           <p class="eyebrow">Stack</p>
-          <h2 id="stack-title">Built from proven Linux desktop parts.</h2>
+          <h2 id="stack-title">Current parts, current names.</h2>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
-            <span class="feature-icon">1</span>
+            <span class="feature-icon">Base</span>
+            <h3>CachyOS foundation</h3>
+            <p>CachyOS provides the kernel, repositories, hardware enablement, gaming stack, and low-level performance tuning.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">Wayland</span>
             <h3>niri session</h3>
-            <p>Scrollable tiling Wayland defaults with xwayland-satellite, screen sharing portals, screenshots, and greetd launching niri-session.</p>
+            <p>Scrollable tiling Wayland defaults with xwayland-satellite, portal configuration, screenshot behavior, and Kakku keybinds.</p>
           </article>
           <article class="feature-card">
-            <span class="feature-icon">2</span>
+            <span class="feature-icon">Shell</span>
             <h3>DankMaterialShell</h3>
-            <p>DMS provides the bar, launcher, notifications, control center, lock/session UI, wallpaper controls, and Material color integration.</p>
+            <p>DMS provides the bar, launcher, notifications, control center, lock/session UI, wallpaper browser, and greeter path.</p>
           </article>
           <article class="feature-card">
-            <span class="feature-icon">3</span>
-            <h3>Curated system</h3>
-            <p>Package sets for core services, desktop apps, CLI tools, development, gaming, media, repo extras, and AUR software.</p>
+            <span class="feature-icon">CLI</span>
+            <h3>fish and Ghostty</h3>
+            <p>Ghostty, fish, Starship, fastfetch, Yazi, btop, tmux, ripgrep, fd, jq, HTTPie, Glow, and other terminal tools are ready.</p>
           </article>
           <article class="feature-card">
-            <span class="feature-icon">4</span>
-            <h3>Kakku tooling</h3>
-            <p>A small command suite for diagnostics, services, keybinds, paths, package information, defaults, DMS plugins, and updates.</p>
+            <span class="feature-icon">Apps</span>
+            <h3>Opinionated defaults</h3>
+            <p>Zen Browser is the primary web default, Chrome is the fallback, Dolphin handles directories, and Zathura handles PDFs.</p>
           </article>
           <article class="feature-card">
-            <span class="feature-icon">5</span>
-            <h3>Ghostty terminal</h3>
-            <p>A GPU-accelerated terminal paired with fish, Starship prompt, Kakku shell defaults, and developer-friendly fonts.</p>
+            <span class="feature-icon">Services</span>
+            <h3>Expected services</h3>
+            <p>NetworkManager, Bluetooth, Docker, Tailscale, UFW, ananicy-cpp, and power profiles are enabled when available.</p>
           </article>
           <article class="feature-card">
-            <span class="feature-icon">6</span>
-            <h3>Zen Browser</h3>
-            <p>Zen handles web links by default, with Firefox kept as a fallback and browser policies applied to both.</p>
+            <span class="feature-icon">Media</span>
+            <h3>Creative and playback tools</h3>
+            <p>PipeWire, WirePlumber, mpv, imv, Loupe, OBS Studio, Kdenlive, SpeedCrunch, and LibreOffice are part of the desktop profile.</p>
           </article>
           <article class="feature-card">
-            <span class="feature-icon">7</span>
-            <h3>matugen colors</h3>
-            <p>Wallpaper-based Material colors keep the shell, prompts, and branding visually aligned across the session.</p>
-          </article>
-          <article class="feature-card">
-            <span class="feature-icon">8</span>
-            <h3>Core services</h3>
-            <p>NetworkManager, Bluetooth, Docker, Tailscale, and power profiles are enabled when available.</p>
+            <span class="feature-icon">ISO</span>
+            <h3>Live ISO workbench</h3>
+            <p>The repo includes CachyOS Live ISO overlay tooling and smoke checks for integration work while the website installer remains the public path.</p>
           </article>
         </div>
       </section>
 
-
-
       <section class="section commands" id="commands" aria-labelledby="commands-title">
         <div class="section-heading">
           <p class="eyebrow">Commands</p>
-          <h2 id="commands-title">Small helpers for everyday maintenance.</h2>
+          <h2 id="commands-title">The helper suite matches the OS repo.</h2>
         </div>
         <div class="command-list">
-          <article><code>kakku info</code><span>Show Kakku, base OS, kernel, niri, and DankMaterialShell information.</span></article>
-          <article><code>kakku doctor</code><span>Check expected commands, configs, branding assets, defaults, DMS plugins, and key services.</span></article>
-          <article><code>kakku doctor --fix</code><span>Reapply safe local defaults, refresh DMS plugins, apply browser policies, set fish, and enable core services.</span></article>
-          <article><code>kakku keybinds</code><span>Print the default keyboard shortcuts.</span></article>
-          <article><code>kakku packages</code><span>Review installed package set information.</span></article>
-          <article><code>kakku dms-plugins</code><span>Install or update the default DankMaterialShell AI Assistant and Calculator plugins.</span></article>
+          <article><code>kakku info</code><span>Show system summary.</span></article>
+          <article><code>kakku doctor</code><span>Run system health check.</span></article>
+          <article><code>kakku services</code><span>Show active and enabled services.</span></article>
+          <article><code>kakku keybinds</code><span>Print full desktop shortcut map.</span></article>
+          <article><code>kakku paths</code><span>Show important config paths.</span></article>
+          <article><code>kakku packages</code><span>Show package information.</span></article>
+          <article><code>kakku update</code><span>Update repo packages.</span></article>
+          <article><code>kakku defaults</code><span>Reapply default applications.</span></article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <img src="assets/wordmark.svg" alt="KakkuOS wordmark" width="245" height="60">
-      <p>Layered defaults, practical tools, and a focused desktop.</p>
+      <div>
+        <img src="assets/wordmark.svg" alt="KakkuOS wordmark" width="245" height="60">
+      </div>
+      <a class="button secondary" href="https://github.com/TheJeme/kakkuos" rel="noopener">View source</a>
     </footer>
 
     <script src="app.js" defer></script>
