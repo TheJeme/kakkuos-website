@@ -138,15 +138,6 @@ h3 {
 
 .hero-copy { width: min(100%, 980px); }
 
-.eyebrow {
-  margin: 0 0 14px;
-  color: var(--green);
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .lead {
   max-width: 760px;
   color: #dde5da;
@@ -169,12 +160,11 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   font-weight: 900;
-  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+  transition: border-color 160ms ease, background 160ms ease;
 }
 
 .button:hover,
 .button:focus-visible {
-  transform: translateY(-1px);
   outline: none;
 }
 
@@ -187,20 +177,6 @@ h3 {
 .button.secondary { background: rgba(255, 255, 255, 0.05); }
 .button.secondary:hover,
 .button.secondary:focus-visible { border-color: var(--line-strong); }
-
-.intro {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.82fr) 1fr;
-  gap: clamp(24px, 6vw, 70px);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.intro p:last-child {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.08rem;
-}
 
 .section-heading {
   max-width: 780px;
@@ -361,14 +337,10 @@ h3 {
     scroll-behavior: auto !important;
     transition: none !important;
   }
-
-  .button:hover,
-  .button:focus-visible { transform: none; }
 }
 
 @media (max-width: 1120px) {
-  .install,
-  .intro {
+  .install {
     grid-template-columns: 1fr;
   }
 
