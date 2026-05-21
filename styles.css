@@ -1,17 +1,9 @@
 :root {
-  --bg: #0f1317;
-  --bg-2: #151a20;
-  --surface: #1b2229;
-  --surface-2: #222b33;
+  --primary: #5B7EE3;
   --text: #f4f7f0;
   --muted: #aeb8b2;
-  --soft: #d6dfd4;
   --line: rgba(244, 247, 240, 0.13);
   --line-strong: rgba(244, 247, 240, 0.24);
-  --green: #9ece6a;
-  --cyan: #6ec6c4;
-  --amber: #e0b86b;
-  --ink: #0a0d0f;
   --radius: 8px;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -23,9 +15,9 @@ body {
   overflow-x: hidden;
   margin: 0;
   background:
-    linear-gradient(135deg, rgba(158, 206, 106, 0.09), transparent 34%),
-    linear-gradient(315deg, rgba(110, 198, 196, 0.08), transparent 38%),
-    linear-gradient(180deg, var(--bg), #11171d 45%, #0d1115);
+    linear-gradient(135deg, rgba(91, 126, 227, 0.12), transparent 34%),
+    linear-gradient(315deg, rgba(143, 168, 237, 0.08), transparent 38%),
+    linear-gradient(180deg, #0f1317, #11171d 45%, #0d1115);
   color: var(--text);
   line-height: 1.6;
 }
@@ -124,7 +116,7 @@ h3 {
 
 .nav a:hover,
 .nav a:focus-visible {
-  border-color: var(--green);
+  border-color: var(--primary);
   color: var(--text);
   outline: none;
 }
@@ -140,7 +132,7 @@ h3 {
 
 .lead {
   max-width: 760px;
-  color: #dde5da;
+  color: var(--muted);
   font-size: clamp(1.1rem, 2vw, 1.35rem);
 }
 
@@ -170,8 +162,7 @@ h3 {
 
 .button.primary {
   border-color: transparent;
-  background: var(--green);
-  color: #10140d;
+  background: var(--primary);
 }
 
 .button.secondary { background: rgba(255, 255, 255, 0.05); }
@@ -218,7 +209,7 @@ h3 {
   overflow: hidden;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
-  background: #090c0f;
+  background: #151b2b;
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.22);
 }
 
@@ -226,7 +217,7 @@ h3 {
   margin: 0;
   padding: 58px 96px 22px 20px;
   overflow: hidden;
-  color: #d7f5b7;
+  color: #c6d4ff;
   white-space: pre;
 }
 
@@ -288,7 +279,7 @@ h3 {
   height: 3px;
   margin-bottom: 24px;
   border-radius: 99px;
-  background: var(--green);
+  background: var(--primary);
   content: "";
 }
 
@@ -321,7 +312,7 @@ h3 {
 }
 
 .command-list code {
-  color: var(--green);
+  color: var(--primary);
   font-weight: 900;
 }
 
@@ -334,10 +325,10 @@ h3 {
   border-top: 1px solid var(--line);
 }
 
-.site-footer img {
-  width: min(245px, 58vw);
-  height: auto;
-  border-radius: var(--radius);
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 900;
 }
 
 .site-footer p { margin: 8px 0 0; }
