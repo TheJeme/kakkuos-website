@@ -62,8 +62,7 @@ h3 {
 }
 
 .hero,
-.section,
-.site-footer {
+.section {
   width: min(1280px, calc(100% - 40px));
   margin: 0 auto;
 }
@@ -185,8 +184,7 @@ h3 {
 
 .feature-card p,
 .command-list span,
-.install-copy p,
-.site-footer p {
+.install-copy p {
   color: var(--muted);
 }
 
@@ -316,23 +314,6 @@ h3 {
   font-weight: 900;
 }
 
-.site-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 42px 0 56px;
-  border-top: 1px solid var(--line);
-}
-
-.footer-brand {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 900;
-}
-
-.site-footer p { margin: 8px 0 0; }
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -375,8 +356,7 @@ h3 {
   .hero-actions { display: none; }
 
   .hero,
-  .section,
-  .site-footer {
+  .section {
     width: min(100% - 28px, 1280px);
   }
 
@@ -385,8 +365,7 @@ h3 {
   h2 { font-size: clamp(2rem, 12vw, 3.2rem); }
 
   .feature-grid,
-  .command-list article,
-  .site-footer {
+  .command-list article {
     grid-template-columns: 1fr;
   }
 
@@ -402,8 +381,7 @@ h3 {
 }
 
 @media (max-width: 480px) {
-  .hero-actions .button,
-  .site-footer .button {
+  .hero-actions .button {
     width: 100%;
   }
 }
