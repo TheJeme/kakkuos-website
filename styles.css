@@ -292,9 +292,6 @@ h3 {
   content: "";
 }
 
-.feature-card:nth-child(3n + 2)::before { background: var(--cyan); }
-.feature-card:nth-child(3n)::before { background: var(--amber); }
-
 .feature-card h3 {
   margin-bottom: 14px;
   font-size: 1.22rem;
@@ -304,6 +301,10 @@ h3 {
   margin-bottom: 0;
   max-width: 34rem;
   line-height: 1.55;
+}
+
+.commands {
+  border-top: 1px solid var(--line);
 }
 
 .command-list {
