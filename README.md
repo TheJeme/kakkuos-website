@@ -1,6 +1,6 @@
 # KakkuOS Website
 
-Static website for KakkuOS, a layered CachyOS desktop.
+Static website for KakkuOS, a layered Linux operating system that keeps CachyOS as the optimized base and adds a complete KakkuOS desktop.
 
 ## Files
 
@@ -18,9 +18,9 @@ The website presents this command:
 curl -fsSL https://kakkuos.jeme.app/install | sh
 ```
 
-`install` is POSIX `sh` compatible. It clones or updates `https://github.com/TheJeme/kakkuos.git` in `~/kakkuos`, then runs the KakkuOS installer from that checkout through the installer's own shebang.
+`install` is POSIX `sh` compatible. It clones or updates `https://github.com/TheJeme/kakkuos.git` in `~/kakkuos`, then runs the KakkuOS installer from that checkout.
 
-KakkuOS is designed to be run on top of a fresh CachyOS install. The installer must be run as the target desktop user, not through `sudo`; the repository installer asks for sudo only for system changes.
+KakkuOS is designed to be run on top of a fresh CachyOS install.
 
 ## Development
 
