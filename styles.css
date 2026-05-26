@@ -292,6 +292,17 @@ h3 {
   line-height: 1.55;
 }
 
+.feature-card a {
+  color: #c2d4f0;
+  transition: color 160ms ease;
+}
+
+.feature-card a:hover,
+.feature-card a:focus-visible {
+  color: var(--primary);
+  outline: none;
+}
+
 .commands {
   border-top: 1px solid var(--line);
 }
