@@ -175,15 +175,13 @@ h3 {
 
 .section-heading p:last-child { color: var(--muted); }
 
-.feature-card,
-.command-list article {
+.feature-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(18, 23, 28, 0.84);
 }
 
 .feature-card p,
-.command-list span,
 .install-copy p {
   color: var(--muted);
 }
@@ -303,28 +301,6 @@ h3 {
   outline: none;
 }
 
-.commands {
-  border-top: 1px solid var(--line);
-}
-
-.command-list {
-  display: grid;
-  gap: 10px;
-}
-
-.command-list article {
-  display: grid;
-  grid-template-columns: minmax(190px, 0.35fr) 1fr;
-  gap: 18px;
-  align-items: center;
-  padding: 18px 20px;
-}
-
-.command-list code {
-  color: var(--primary);
-  font-weight: 900;
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -368,8 +344,7 @@ h3 {
   h1 { font-size: clamp(4rem, 20vw, 6rem); }
   h2 { font-size: clamp(2rem, 12vw, 3.2rem); }
 
-  .feature-grid,
-  .command-list article {
+  .feature-grid {
     grid-template-columns: 1fr;
   }
 
